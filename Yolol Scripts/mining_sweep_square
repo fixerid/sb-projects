@@ -1,0 +1,31 @@
+IF :MLOn<1 THEN :MLL=0 :OC=0 s=0 GOTO1 END :OC=0
+if :bat<3000 then :MLL=0 goto1 end i=1 ra=-7.5 pa=-7.5
+if s<1 then rb=ra pb=pa p=0 r=0 s=1 end
+rl=-30 ru=0 pl=-20 pu=40 cw=1 if cw<1 then ca=-1 else ca=1 end
+if pb<=pl then pb=pl end If pb>=pu then pb=pu end 
+if rb<=rl then rb=rl end if rb>=ru then rb=ru end  :MLLp=pb :MLLr=rb
+:MLL=1 IF a==0 AND b==0 THEn p+=i pb+=p b=1 GOTO1 END
+IF a==0 AND b==1 THEn r+=i rb=rb-r*ca b=0 a=1 GOTO1 :OC=1 END
+IF a==1 AND b==0 THEn p+=i pb-=p b=1 GOTO1 END
+IF a==1 AND b==1 THEn r+=i rb=rb+r*ca b=0 a=0 :OC=1 GOTO1 END
+
+
+//comments from here below
+basic mining script that sweeps in a square pattern
+if you don't want it to control ore collector as well then remove :OC fields from line 1,7,10
+
+:MLOn (button name to turn on/off script)
+:MLL (mining laser on/off)
+:OC (ore collector on/off field)
+:bat (StoredBatteryPower field name)
+:bat<3000 on line 2 (if battery is less than 3000 then waits until its above)
+i (amount in degrees to increment with each sweep)
+ra (starting rotation of turntable)
+pa (starting pitch of turret)
+rl (rotation lower limit)
+ru (rotation upper limit)
+pl (pitch lower limit)
+pu (pitch upper limit)
+:MLLp (turret pitch entry field name)
+:MLLr (turntable rotation entry field name)
+cw (0: moves in counter clockwise orientation, 1: moves in clockwise orientation)
