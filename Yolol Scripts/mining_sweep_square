@@ -9,6 +9,8 @@ IF a==0 AND b==1 THEn r+=i rb=rb-r*ca b=0 a=1 GOTO1 :OC=1 END
 IF a==1 AND b==0 THEn p+=i pb-=p b=1 GOTO1 END
 IF a==1 AND b==1 THEn r+=i rb=rb+r*ca b=0 a=0 :OC=1 GOTO1 END
 
+//tips to Fixerid. Even 1 cred or kind words appreciated
+
 
 //comments from here below
 basic mining script that sweeps in a square pattern
