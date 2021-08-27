@@ -1,0 +1,5 @@
+IF :scan<1 then goto1 end n="\n" s=" " itr=0 :sc=""  :chk=1
+if itr<:rslt then :idx=itr :sc+=:mat+s+:vol+n itr++ goto2 end goto1
+
+//credits to XenoCow Entertainment (https://www.youtube.com/watch?v=lnhBShSdejw)
+//head there for details
