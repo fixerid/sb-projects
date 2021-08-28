@@ -1,18 +1,19 @@
-if :nav<1 then g=0 f=0 goto1 end
-r=40 pt=8 yt=8 ep=1.05 ed=5000 et=5000
+if :nav<1 then g=0 f=0 goto1 end 
+r=30 pt=8 yt=8 ep=1.05 ed=5000 et=5000
+if g>0 then :cas=1 else :cas=0 end
 xD=:aa-:xj yD=:bb-:yj zD=:cc-:zj Dt=sqrt((xD)^2+(yD)^2+(zD)^2)
 if f<1 then x0=:xj y0=:yj z0=:zj Do=Dt f=1 r=0 end
 da=sqrt((:xj-x0)^2+(:yj-y0)^2+(:zj-z0)^2) d0=d1 d1=Dt v1=d0-d1
-dx=(Do-da)*ep+ed if g>0 then :cas=1 else :cas=0 end
-if Dt>dx then :fwd=0 if abs(v1)<1 then f=0 g=0 goto1 end end
-e=10^6 ds=e*sqrt((:xa-:xj)^2+(:ya-:yj)^2+(:za-:zj)^2)  
-Dd=ds/Dt xs=:xj+Dd*xD/e ys=:yj+Dd*yD/e zs=:zj+Dd*zD/e  
+dx=(Do-da)*ep+ed if Dt>dx or :c>0 then s=1 :c=0 end
+if s>0 then :fwd=0 if abs(v1)<15 then f=0 g=0 s=0 goto1 end end
+e=10^6 ds=e*sqrt((:xa-:xj)^2+(:ya-:yj)^2+(:za-:zj)^2)
+Dd=ds/Dt xs=:xj+Dd*xD/e ys=:yj+Dd*yD/e zs=:zj+Dd*zD/e
 vr=xs-:xa vs=ys-:ya vt=zs-:za vj=:xk-:xj vk=:yk-:yj vl=:zk-:zj
 va=:xa-:xj vb=:ya-:yj vc=:za-:zj vx=vk*vc-vb*vl vy=-(vj*vc-va*vl)
-vz=vj*vb+va*vk pj=vr*vj+vs*vk+vt*vl px=vr*vx+vs*vy+vz*vt 
+vz=vj*vb+va*vk pj=vr*vj+vs*vk+vt*vl px=vr*vx+vs*vy+vz*vt
 n="\n" :dd=(Do-da)+n+Dt+n+v1+"\npj:"+pj+" px:"+px+" r:"+r+" g:"+g
 if Dt<et then :nav=0 :fwd=0 end if g>0 then goto1 end
-if pj<0 then :pch=pt end if pj>0 then :pch=-pt end 
+if pj<0 then :pch=pt end if pj>0 then :pch=-pt end
 if px>0 then :yaw=yt end if px<0 then :yaw=-yt end
 if pj>-r and pj<r and px>-r and px<r then g=1 :fwd=100 end goto1
 
