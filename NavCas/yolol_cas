@@ -1,6 +1,6 @@
 if :cas<1 then :rf=0 goto1 end :rf=1 c=950
 if :rd<c then goto4 end
-:pch=0 if i>0 then :fwd=f i=0 end goto1
+:pch=0 if i>0 then :fwd=f :c=1 i=0 end goto1
 :pch=-100 if i<1 then i=1 f=:fwd :fwd=0 end goto1
 
 
