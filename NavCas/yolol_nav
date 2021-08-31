@@ -13,8 +13,8 @@ va=:xa-:xj vb=:ya-:yj vc=:za-:zj vx=vk*vc-vb*vl vy=-(vj*vc-va*vl)
 vz=vj*vb+va*vk pj=vr*vj+vs*vk+vt*vl px=vr*vx+vs*vy+vz*vt
 n="\n" :dd=(Do-da)+n+Dt+n+v1+"\npj:"+pj+" px:"+px+" r:"+r+" g:"+g
 if Dt<et then :nav=0 :fwd=0 end if g>0 then goto1 end
-if pj<0 then :pch=pt end if pj>0 then :pch=-pt end
-if px>0 then :yaw=yt end if px<0 then :yaw=-yt end
-if pj>-r and pj<r and px>-r and px<r then g=1 :fwd=100 end goto1
+if pj>-r and pj<r and px>-r and px<r then g=1 :fwd=100 goto1 end 
+if pj<-r then :pch=pt end if pj>r then :pch=-pt end
+if px>r then :yaw=yt end if px<-r then :yaw=-yt end goto1
 
 //tips to Fixerid. Even 1 cred or kind words appreciated
