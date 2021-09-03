@@ -3,14 +3,9 @@ if :rd<c then goto4 end
 :pch=0 if i>0 then :fwd=f :c=1 i=0 end goto1
 :pch=-100 if i<1 then i=1 f=:fwd :fwd=0 end goto1
 
-
-
-
-
-
-
-
-
+//note if you want to make your own cas to integrate with nav system
+//set :c=1 in your code when your cas system is engaged
+//this will let nav know it needs to realign
 
 
 
