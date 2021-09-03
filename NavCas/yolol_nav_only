@@ -17,3 +17,4 @@ if pj<-r then :pch=pt end if pj>r then :pch=-pt end
 if px>r then :yaw=yt end if px<-r then :yaw=-yt end goto1
 
 //tips to Fixerid. Even 1 cred or kind words appreciated
+//version without cas integration
