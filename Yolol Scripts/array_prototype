@@ -1,15 +1,23 @@
 :dp="0:"+z0+"\n1:"+z1+"\n"+a+"\n"+c 
-a="123,9,8,954" s0=1 s1=2 a1="asdf"
-b="" if :get<1 and :rem<1 and :rpl<1 then goto1 end c=""
+a1="123,9,8,954" s0=3 s1="" ar="asdf" a=a1 b="" d=""
+if :get<1 and :rem<1 and :rpl<1 then goto1 end c=""
 g=:get r=:rem p=:rpl if s1=="" then s1=s0 end
-m=s0 n=s1-m i=-1-m f="" z0=f z1=f z2=f z3=f z4=f z5=f
-k=a l=k-(--a) if l!="," then b=l+b goto6 end i++
+m=s0 n=s1-m i=-1-m f="" z0=f z1=f z2=f z3=f z4=f z5=f goto7
+if a!="" then k=a l=k-(--a) if l!="," then b=l+b goto6 end end i++
 if i==0 then z0=b end if i==1 then z1=b end if i==2 then z2=b end
 if i==3 then z3=b end if i==4 then z4=b end if i==5 then z5=b end
-if a=="" or i==n then goto11 end if g>0 then b="" end
-if i<0 then d=b end goto6
-if r>0 then c=a+","+d end if p>0 then c=a+","+a1+","+d end
+if a=="" or i==n then goto11 end
+if i<0 then if b!="" then d=","+b+d else d=b end end b="" goto6
+if r>0 then c=a+d end if p>0 then c=a+","+ar+d end
+if p>0 and i<0 then c=ar+a1 end
 g=0 r=0 p=0 :get=0 :rem=0 :rpl=0 goto1
+
+
+
+
+
+
+
 
 a1="s2345"
 a=a1+a
