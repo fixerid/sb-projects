@@ -1,0 +1,26 @@
+:dp="0:"+z0+"\n1:"+z1+"\n"+a+"\n"+c 
+a="123,9,8,954" s0=1 s1=2 a1="asdf"
+b="" if :get<1 and :rem<1 and :rpl<1 then goto1 end c=""
+g=:get r=:rem p=:rpl if s1=="" then s1=s0 end
+m=s0 n=s1-m i=-1-m f="" z0=f z1=f z2=f z3=f z4=f z5=f
+k=a l=k-(--a) if l!="," then b=l+b goto6 end i++
+if i==0 then z0=b end if i==1 then z1=b end if i==2 then z2=b end
+if i==3 then z3=b end if i==4 then z4=b end if i==5 then z5=b end
+if a=="" or i==n then goto11 end if g>0 then b="" end
+if i<0 then d=b end goto6
+if r>0 then c=a+","+d end if p>0 then c=a+","+a1+","+d end
+g=0 r=0 p=0 :get=0 :rem=0 :rpl=0 goto1
+
+a1="s2345"
+a=a1+a
+
+//(WIP)not release ready
+//working on a script for basic array functions
+//currently has get, remove, replace functions
+//arrays are built backwards compared to normal programming
+//ie. [#0,#1,#2...] is enumerated [...,#2,#1,#0] 
+//this is due to a compromise for speed as the array is made
+//by subtracting individual characters, to enumerate normally
+//would essentially mean having to enumerate the whole array again
+//and would add additional complexity to the script which is 
+//not advisable with the limitations of yolol
