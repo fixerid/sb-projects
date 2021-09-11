@@ -29,3 +29,5 @@ a=a1+a
 //would essentially mean having to enumerate the whole array again
 //and would add additional complexity to the script which is 
 //not advisable with the limitations of yolol
+
+//need to find a way to convert string to number, might just have to make another script for that
