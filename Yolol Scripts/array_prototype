@@ -1,5 +1,5 @@
 :dp="0:"+z0+"\n1:"+z1+"\n"+a+"\n"+c f="" v=","
-a1="123,9,8,954" s0=4 s1="" ar="asdf" a=a1 b="" d=""
+a1="123,9,8,954" s0=0 s1="" ar="asdf" a=a1 b="" d=""
 if :get<1 and :rem<1 and :rpl<1 and :ist<1 then goto1 end c=""
 g=:get r=:rem p=:rpl t=:ist if s1=="" then s1=s0 end
 m=s0 n=s1-m i=-1-m z0=f z1=f z2=f z3=f z4=f z5=f goto7
@@ -13,11 +13,12 @@ if t>0 then c=a+","+b+","+ar+d end
 if (p>0 or t>0) and i<0 then if a1!=f then c=ar+v+a1 else c=ar end end
 g=0 r=0 p=0 t=0 :get=0 :rem=0 :rpl=0 :ist=0 goto1
 
+//example string to number conversion, deciding if incorporate in seperate chip
+if w=="1" then w=1 end if w=="2" then w=2 end if w=="3" then w=3 end
+if w=="4" then w=4 end if w=="5" then w=5 end if w=="6" then w=6 end
+if w=="7" then w=7 end if w=="8" then w=8 end if w=="9" then w=9 end
+if w=="0" then w=0 end w=w*10^q u+=w
 
-
-
-a1="s2345"
-a=a1+a
 
 //(WIP)not release ready
 //working on a script for basic array functions
